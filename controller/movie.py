@@ -14,8 +14,6 @@ def insert_question(data):
 	return insert_in_db
 
 
-# {'answer': 'glass', 'options': ['glass', 'water'], 'question': 'what isthis?'}
-
 
 def check_answer(ans):
 	score=0
@@ -36,20 +34,14 @@ def check_answer(ans):
 		return scores
 	else:
 		return "try again"
-	# print (sdkjfsdf)
-
-
+	
 
 def user_score():
 	query=db_query().get_all_with_condition("scores","user_id!='"+session["id"]+"'")
-	print (len(query),"sadasdaqqqqqqqqqqqqqqqqqqqq")
 	if len(query)!=0:
 		scores=pd.DataFrame(query)
-		# scores=pd.DataFrame(db_query().get_all("scores"))
-		# scores=(scores.groupby(["user_id"]).scores.agg(['max']).date.agg(['sum']).to_dict())
 		aggregation_functions = {"score_date":"first","scores":"first","user_id":"first"}
 		aggregated_score = list(scores.groupby(scores['user_id']).aggregate(aggregation_functions).T.to_dict().values())
-		# print(list(df_new))
 		user_score_data=[]
 		for i in aggregated_score:
 			user_data=(db_query().get_one("users","id='"+i['user_id']+"'"))
