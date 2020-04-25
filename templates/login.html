@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Quiz</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static',filename='login')}}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='login')}}/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='login')}}/css/registercss.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static',filename='login')}}/css/simple-line-icons.css"> 
+
+   
+
+  </style>
+  </head>
+  <body class="background">
+
+
+
+<br>
+<header style="text-align:center; margin-top:75px;">
+<a href="#">
+  <img src="{{ url_for('static',filename='login')}}/img/rs.png" height="225">
+</a>
+</header>
+
+<div class="container">
+     <form class="form-signin" method="POST" actioin="/">
+       <input type="text" id='username' placeholder="E-mail" name="username" class="form-control" required autofocus>
+       <input type="password"  id='password' placeholder="Password" class="form-control" name="password" required>
+       <button id ='validate' class="btn btn-lg btn-red btn-block" type="submit">Sign in</button>
+       	<br><hr>
+						Don't have an account? <a href="{{url_for('loginModule.register')}}" class="ml-2">Sign Up</a>
+     </form>
+
+</div>
+
+<div class="row" style="margin-left: 20px;margin-right: -15px;color: red;">
+  <div class="con-sm-3">
+    
+  {{info}}
+  </div>
+</div>
+
+<footer id="footer">
+<div class="container">
+<div class="site-info">
+</div>
+</div>
+</footer>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='login')}}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='login')}}/js/jquery.js"></script>
+<!--      <script type='text/javascript' src="{{ url_for('static',filename='js')}}/login.js"></script>
+ -->  </body>
+</html>

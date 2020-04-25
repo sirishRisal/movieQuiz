@@ -1,0 +1,45 @@
+    .form-signin {
+ max-width: 330px;
+ padding: 15px;
+ margin: 0 auto;
+}
+.form-signin .form-control {
+ position: relative;
+ height: auto;
+ -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+  margin-bottom: 10px;
+ padding: 10px;
+ font-size: 16px;
+}
+.form-signin .form-control:focus {
+ z-index: 2;
+}
+
+.btn-red{
+   color: #fff;
+   background: linear-gradient(60deg,#1bcce4,#00acc1);
+   width:100%;}
+
+  .btn-red:hover,.btn-red:active, .btn-red:focus {
+   color: #fff;
+   background: #26c6da;}
+
+   body, html {
+   height: 100%;
+   margin: 0;
+}
+
+.background {
+   background-image: url("..{{ url_for('static',filename='login')}}/img/test.jpg");
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.active.show{
+    background-color: #fefefe;
+    border-color:#ddd;
+    border-bottom-color: #fefefe;
+}

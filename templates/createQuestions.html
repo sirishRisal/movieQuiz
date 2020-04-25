@@ -1,0 +1,79 @@
+{%extends 'base.html' %}
+{%block userManagement%}active{%endblock%}
+{%block content%}
+  
+  
+<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <!-- <div class="col-md-2">
+                  <a href="/quiz" type="button" class="btn btn-info">Take the movie quiz</a>
+                </div> -->
+                <div class="card-body" >
+                  <form id="question_form"  method="POST">
+                            <div class="row">
+                              <div class="col-md-9">
+                                <div class="form-group bmd-form-group is-focused is-filled">
+                                  <label class="bmd-label-floating">Question</label>
+                                  <input required="" name="question" type="text" class="form-control" >
+                                </div>
+                              </div>
+
+                            </div>
+                            <br>
+                      <hr>
+                        <div class="row">
+                          
+                              <div class="col-md-6">
+                                <div class="form-group bmd-form-group is-focused is-filledp">
+                                  <label class="bmd-label-floating">Options:</label>
+                                  <br>
+                                  <!-- <input required="" name="user_last_name" type="text" class="form-control"> -->
+                                </div>
+                              </div>
+                        </div>
+                         
+                      <div class="field_wrapper">
+                        <div>
+                          <input required="" type="text" name="field_name[]"  value=""/>
+                          <a href="#" class="add_button" title="Add field"><img src="http://demos.codexworld.com/add-remove-input-fields-dynamically-using-jquery/images/add-icon.png"/></a>
+                        </div>
+                      </div>
+                      <br>
+                      <hr>
+                      
+                      <div class="row">
+                              <div class="col-md-5">
+                                <div class="form-group bmd-form-group is-focused is-filled">
+                                  <label class="bmd-label-floating">Correct answer</label>
+                                  <input required="" name="correctAnswer" type="text" class="form-control" >
+                                </div>
+                              </div>
+
+                            </div>
+                        
+                          <button type="submit" class="btn btn-primary pull-right">Save Changes</button>
+                          <div class="clearfix"></div>
+                        </form>
+                    
+            
+
+
+          
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+{%endblock%}
+{%block script%}
+<script type='text/javascript' src="{{ url_for('static',filename='js')}}/createQuestions.js"></script>
+ {%endblock%}

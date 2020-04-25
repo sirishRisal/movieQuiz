@@ -1,0 +1,50 @@
+
+
+.bootstrap-tagsinput .tag {
+    margin-right: 2px;
+    color: 
+    white;
+    background-color: #00bcd4;
+}
+.label-info {
+    background-color: 
+    #5bc0de;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.bootstrap-tagsinput {
+    color: #555;
+    line-height: 40px;
+    cursor: text;
+}
+.badge {
+
+    font-size: 75%;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+
+}
+.bootstrap-tagsinput .tag [data-role="remove"]::after {
+    content: "x";
+    padding: 0px 2px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+*, ::after, ::before {
+
+    box-sizing: border-box;
+
+
+}

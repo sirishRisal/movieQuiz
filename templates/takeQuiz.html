@@ -1,0 +1,36 @@
+{%extends 'base.html' %}
+{%block userManagement%}active{%endblock%}
+{%block content%}
+  
+  <style type="text/css">
+    .questionOptions{
+      padding: 0px 15px;
+    }
+  </style>
+<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                
+                  
+                  <div class="card-body" id="quizQuestions">
+
+                    
+                  </div>
+                 
+                
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{%endblock%}
+
+
+{%block script%}
+<script type='text/javascript' src="{{ url_for('static',filename='js')}}/takeQuiz.js"></script>
+
+
+{%endblock%}
