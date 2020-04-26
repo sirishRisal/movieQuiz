@@ -4,6 +4,7 @@ from controller.movie import *
 from database import *
 import ast
 from controller.roles import *
+import random
 
 
 movieQuiz=Blueprint('movieQuiz', __name__)
@@ -43,13 +44,23 @@ def getQuizQuestion():
 	if request.method=="GET":
 		question=db_query().get_all("question")
 		print (question,"qqqqqqqqqqqqqqqqqq")
-		question=[{"options":ast.literal_eval(i["options"]),"id":i["id"],"question":i["question"] } for i in question]
-		# question=(map(lambda x:(x["options"]),question))
-		return json.dumps(question)
-		# data=json.loads(requests.data.content.decode('utf-8'))
-		# data=requests.data.json()
-		# data = json.loads(request.data.decode('utf-8'))
-		# print("sdfjsdlfksdjflksdjf",data)
+		print(len(question))
+
+		if len(question)>=10:
+			random.shuffle(question)
+			for i in range(0,9):
+				print (question[i])
+
+
+				question=[{"options":ast.literal_eval(i["options"]),"id":i["id"],"question":i["question"] } for i in question]
+				# question=(map(lambda x:(x["options"]),question))
+				return json.dumps(question)
+				# data=json.loads(requests.data.content.decode('utf-8'))
+				# data=requests.data.json()
+				# data = json.loads(request.data.decode('utf-8'))
+				# print("sdfjsdlfksdjflksdjf",data)
+		else:
+			return "insufficient question"
 	
 	return render_template("takeQuiz.html")
 
@@ -60,7 +71,6 @@ def getQuizQuestion():
 def createquestions():
 	if request.method=="POST":
 		data = json.loads(request.data.decode('utf-8'))
-		data
 		check=db_query().get_one("question"," question='"+data["question"]+"'")
 		# print (check)
 		if check==None:

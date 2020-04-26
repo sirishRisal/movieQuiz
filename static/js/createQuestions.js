@@ -26,13 +26,14 @@ $(document).ready(function(){
 
    $('#question_form').submit(function (e) { 
         e.preventDefault();
-        var answer=$("input[name=correctAnswer]").val()
+        var answer=$("input[name=correctAnswer]").val().toLowerCase().trim();
         var values = [];
         $("input[name='field_name[]']").each(function() {
             values.push($(this).val().toLowerCase().trim());
         });
         if (values.length<2) {
-          alert("Option must be more than two")
+          md.showNotification('ERROR',"Option must be more than two")
+
         }else{
           var includeAnswer = values.includes(answer);
           if(includeAnswer){
@@ -45,6 +46,8 @@ $(document).ready(function(){
                   contentType: 'application/json;',
                    success: function(response) {
                     md.showNotification('SUCCESS',response)
+                    window.location = 'http://127.0.0.1:5000/createquestions';
+                      
                                       
                   },            
                   error: function(error) {

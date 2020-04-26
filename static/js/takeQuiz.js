@@ -7,7 +7,12 @@ $.ajax({
    success: function(response) {
     // var x=JSON.parse(response)
     //   alert(x[0]["id"])
-          addQuestion(JSON.parse(response))
+    if(response=="insufficient question"){
+      md.showNotification("ERROR","Insufficient Question");
+    }else{
+      addQuestion(JSON.parse(response))
+    }
+
   },            
   error: function(error) {
       alert(error);

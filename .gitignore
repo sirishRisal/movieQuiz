@@ -1,2 +1,3 @@
 controller/__pycache__/
 *.pyc
+views/__pycache__/
